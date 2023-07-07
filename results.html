@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESULTS</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>{{ query }}</h1>
+    <div id="images">
+        <div id="content">
+            <table id="table">
+            <thead>
+                <th>Score</th>
+                <th>Image</th>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result["score"] }}</td>
+                    <td><img src="../static/{{ result['path'] }}" alt=""></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</body>
+</html>
